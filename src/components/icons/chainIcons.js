@@ -1,7 +1,7 @@
 export const PolygonIcon = () => {
     return <svg
-      width="45"
-      height="40"
+      width="50"
+      height="64"
       viewBox="0 0 45 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -29,8 +29,8 @@ export const PolygonIcon = () => {
 
   export const BscIcon =()=> {
   return <svg
-      width="38"
-      height="44"
+      width="50"
+      height="64"
       viewBox="0 0 38 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +92,8 @@ export const PolygonIcon = () => {
 
   export const CeloIcon =()=>  {
    return <svg
-      width="39"
-      height="40"
+      width="50"
+      height="64"
       viewBox="0 0 39 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -178,15 +178,26 @@ export const HarmonyIcon = () => {
 }
 
 export const TronIcon = () => {
-    return <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return <svg width="44" height="64" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M37.4995 12.0504C35.6245 10.3191 33.0308 7.67543 30.9183 5.80045L30.7933 5.71296C30.5854 5.54594 30.3509 5.41497 30.0996 5.32546V5.32546C25.0059 4.37547 1.29998 -0.0557185 0.837489 0.000530784C0.707896 0.0186806 0.584024 0.0656666 0.474994 0.138029L0.356245 0.231778C0.210025 0.380276 0.0989681 0.559676 0.0312496 0.756771L0 0.83802V1.28176V1.35051C2.66871 8.78166 13.2061 33.1251 15.281 38.8375C15.406 39.225 15.6435 39.9625 16.0873 40H16.1873C16.4248 40 17.4373 38.6625 17.4373 38.6625C17.4373 38.6625 35.537 16.7128 37.3683 14.3753C37.6053 14.0874 37.8146 13.7777 37.9933 13.4504C38.0389 13.1942 38.0174 12.9307 37.9308 12.6853C37.8443 12.44 37.6957 12.2212 37.4995 12.0504V12.0504ZM22.081 14.6066L29.8059 8.20042L34.337 12.3754L22.081 14.6066ZM19.081 14.1878L5.78117 3.28799L27.2996 7.25668L19.081 14.1878ZM20.281 17.0441L33.8933 14.8503L18.331 33.6001L20.281 17.0441ZM3.97495 4.37547L17.9685 16.2503L15.9435 33.6126L3.97495 4.37547Z" fill="#8B7DF4"/>
     </svg>
     
 }
 
 export const AlgoIcon = () => {
-   return <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+   return <svg width="50" height="64" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.26591 36.2528L11.5088 27.1736L16.7517 18.1264L21.9627 9.04721L22.8258 7.60861L23.2095 9.04721L24.8079 15.0254L23.0176 18.1264L17.7747 27.1736L12.5638 36.2528H18.8297L24.0726 27.1736L26.79 22.4742L28.0687 27.1736L30.4984 36.2528H36.1249L33.6953 27.1736L31.2656 18.1264L30.6263 15.7927L34.5265 9.04721H28.836L28.6442 8.37587L26.6621 0.959069L26.4064 0H20.9397L20.8118 0.191814L15.6968 9.04721L10.4538 18.1264L5.24291 27.1736L0 36.2528H6.26591Z" fill="#8B7DF4"/>
 </svg>
 
+}
+
+export const EthIcon = () => {
+    return <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M31.6806 8.17983L46.1355 32.164L31.6806 25.6057V8.17983Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+<path d="M17.126 32.1638L31.5808 8.17983V25.5943L17.126 32.1638Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+<path d="M31.6807 43.7232L46.0936 35.2131L31.6806 55.5111L31.6807 43.7232Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+<path d="M31.5808 43.7227V55.5106L17.1765 35.2127L31.5808 43.7227Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+<path d="M31.6807 25.7036L46.1532 32.2818L31.6807 40.8365V25.7036Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+<path d="M31.5805 40.8364L17.1081 32.2817L31.5805 25.7036V40.8364Z" fill="#7B61FF" stroke="white" stroke-width="0.1"/>
+</svg>
 }

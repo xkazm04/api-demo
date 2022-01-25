@@ -5,8 +5,7 @@ import {useContext, useState} from 'react';
 import styled from 'styled-components'
 import {FeatureContext} from '../../utils/FeatureContext';
 import { oneDark } from '@codemirror/theme-one-dark';
-import axios from 'axios';
-import ResultComponent from './resultComponent'
+import ResultList from './apiResult'
 import { BlockchainContext } from '../../utils/BlockchainContext';
 import IconButton from 'rsuite/IconButton';
 
@@ -39,30 +38,19 @@ const Mirror =()=>{
     const {feature, req, setReq} = useContext(FeatureContext);
     const {chain} = useContext(BlockchainContext)
     const [result, setResult] = useState('nothing')
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null) 
     
 
 
-
-      const play = async () => {
-        try {
-            const res = await req;
-            console.log(res.data);
-            setResult(res.data)
-            setError(null)
-          } catch (e) {
-            console.error(e.message);
-            setError(e.message)
-            setResult(null)
-          }
-
-      }
-
+    const play =  () => {
+       const res = Function(req)
+       res()
+       console.log(res)
+    }
 
         return (
             <Kontejner>
               <Title>  {feature}</Title>
-              
             <CodeMirror
                     value={req}
                     height="50vh"
@@ -75,7 +63,7 @@ const Mirror =()=>{
             />
             <PlayButton icon={TatumIcon} onClick={play} >Run me</PlayButton>
 
-     {result ? <ResultComponent result={result} error={error}/> : null} 
+     {result ? <ResultList result={result} error={error}/> : null} 
             </Kontejner>
         );
 

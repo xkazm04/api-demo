@@ -42,6 +42,8 @@ background: linear-gradient(180deg, #F9F8FE 4.17%, #F0EDFF 30.21%, #EEEAFF 56.77
 const Limk = styled(Link)`
 color: #4F37FD;
 margin: 2rem;
+font-size: 1.1rem;
+font-weight: bold;
   &:hover{
     text-decoration:none;
   }
@@ -53,9 +55,10 @@ margin: 2rem;
 function App() {
 
   const [chain, setChain] =  useState('BSC')
-  const [feature, setFeature] =  useState('select feature')
+  const [feature, setFeature] =  useState('Select feature')
   const [privKey, setPrivKey] = useState(null)
   const [req, setReq] =  useState('code snippet')
+  const [method, setMethod] = useState('API')
 
 
   return (
@@ -70,7 +73,7 @@ function App() {
  <Metamask> <MetamaskIcon/></Metamask>
 
   <BlockchainContext.Provider value={{ chain, setChain, privKey, setPrivKey }}>
-  <FeatureContext.Provider value={{ feature, req, setReq, setFeature }}>
+  <FeatureContext.Provider value={{ feature, req, setReq, setFeature, method, setMethod }}>
 <ContentKontejner>
   <Routes>
     <Route path="test" element={<div>Test</div>} />

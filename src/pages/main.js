@@ -43,16 +43,16 @@ const Blank =()=>{
                     <Gridik fluid>
                     <Row gutter={50} className="show-grid">
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'NFT Supply'} description={'Deploy, mint or burn NFT'} iconColor={'#2CCD9A'} link={'/'} />
+                            <NavCard title={'NFT transactions'} description={'Deploy, mint or burn NFT and track their movement'} iconColor={'#2CCD9A'} link={'/'} />
                             </Col>
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'Transfer NFT'} description={'Transfer NFT from one address to another'}  iconColor={'#0EE8F5'} link={'/getNFt'}/>
+                            <NavCard title={'Multi token transactions'} description={'Use the beauty of Multi token batch features'}  iconColor={'#0EE8F5'} link={'/getNFt'}/>
                             </Col>
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'Get NFT transactions'} description={'Get NFT transactions by address, token'}  iconColor={'#CD1010'}/>
+                            <NavCard title={'NFT Marketplace'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}/>
                             </Col>
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'Get NFT Token'} description={'Get NFT Token Provenance, Metadata, Royalty info'}  iconColor={'#EFFF31'}/>
+                            <NavCard title={'NFT Auctions'} description={'Create auction '}  iconColor={'#EFFF31'}/>
                             </Col>
     </Row>
                         

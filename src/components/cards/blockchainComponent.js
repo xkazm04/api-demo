@@ -20,18 +20,15 @@ const Title = styled.div`
 `
 
 const ActionButton = styled(Button)`
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   box-shadow: 0px 4px 7px -2px rgba(16, 24, 40, 0.03),
     0px 6px 15px -4px #F3FFF8;
     background: transparent;
     width: 5rem;
-    height: 6rem;
 
-    position: absolute;
     &:hover{
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     box-sizing: border-box;
     box-shadow: 4px 10px 7px -2px rgba(16, 24, 40, 0.03),
         2px 18px 25px -8px #F3FFF8;
@@ -48,8 +45,8 @@ const Icon = styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 0.3rem;
+    padding-top: 0.7rem;
     border-radius: 50%;
     &:hover{
         transition: all 0.2s ease-in-out;
@@ -67,9 +64,8 @@ const BlockchainComponent =({icon, name, onClick})=>{
         return (
             <Kontejner>
             
-                                <Title>{name}</Title>
+                <Title>{name}</Title>
                 <Icon onClick={onClick}>{icon}</Icon>
-
                 <ActionButton  onClick={onClick}></ActionButton>
             </Kontejner>
         );

@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import {useContext } from "react";
 import { Grid, Row, Col } from "rsuite";
 import styled from "styled-components";
 import { BlockchainContext } from "../utils/BlockchainContext";
-import BlockchainComponent from "./blockchainComponent";
-import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon} from './icons/chainIcons'
+import BlockchainComponent from "./cards/blockchainComponent";
+import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon} from './icons/chainIcons'
 
 
 const Kontejner = styled.div`
@@ -51,12 +51,9 @@ const Value = styled.div`
 
 const Selector = () => {
 
-
-  const [blockchain, setBlockchain] = useState("");
   const {chain, setChain, privKey, setPrivKey} = useContext(BlockchainContext)
   
   const setMe = (selectedChain,selectedPrivKey) => {
-    setBlockchain(selectedChain);
     setChain(selectedChain)
     setPrivKey(selectedPrivKey)
     console.log("clicked");
@@ -67,7 +64,44 @@ const Selector = () => {
       <BlockchainBox>
         <Grid fluid>
           <Row className="show-grid">
-            <Col xs={24} sm={24} md={8}>
+          <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<AlgoIcon/>}
+                name={"Alogorand"}
+                onClick={() => setMe("ALGO")}
+              />
+            </Col>
+            <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<BscIcon/>}
+                name={"Bsc"}
+                onClick={() => setMe("BSC")}
+              />
+            </Col>
+            <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<CeloIcon/>}
+                name={"Celo"}
+                onClick={() => setMe("CELO", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
+              />
+            </Col>
+            <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<EthIcon/>}
+                name={"Eth"}
+                onClick={() => setMe("ETH")}
+              />
+            </Col>
+          </Row>
+          <Row className="show-grid">
+          <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<HarmonyIcon/>}
+                name={"Harmony"}
+                onClick={() => setMe("ONE", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
+              />
+            </Col>
+          <Col xs={24} sm={24} md={6}>
               <BlockchainComponent
                 icon={<PolygonIcon/>}
                 name={"Polygon"}
@@ -75,38 +109,15 @@ const Selector = () => {
               />
               
             </Col>
-            <Col xs={24} sm={24} md={8}>
-              <BlockchainComponent
-                icon={<CeloIcon/>}
-                name={"Celo"}
-                onClick={() => setMe("CELO", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
-              />
-            </Col>
-            <Col xs={24} sm={24} md={8}>
-              <BlockchainComponent
-                icon={<BscIcon/>}
-                name={"Bsc"}
-                onClick={() => setMe("BSC")}
-              />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col xs={24} sm={24} md={8}>
+            <Col xs={24} sm={24} md={6}>
               <BlockchainComponent
                 icon={<SolanaIcon/>}
                 name={"Solana"}
                 onClick={() => setMe("SOL")}
               />
-              
             </Col>
-            <Col xs={24} sm={24} md={8}>
-              <BlockchainComponent
-                icon={<HarmonyIcon/>}
-                name={"Harmony"}
-                onClick={() => setMe("ONE", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
-              />
-            </Col>
-            <Col xs={24} sm={24} md={8}>
+
+            <Col xs={24} sm={24} md={6}>
               <BlockchainComponent
                 icon={<TronIcon/>}
                 name={"Tron"}
