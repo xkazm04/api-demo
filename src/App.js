@@ -7,7 +7,7 @@ import 'rsuite/styles/index.less';
 import { useState } from 'react';
 import styled from 'styled-components'
 import Main from './pages/main'
-import GetNft from './pages/getNft'
+import Features from './pages/features'
 import { BlockchainContext } from "./utils/BlockchainContext";
 import { FeatureContext } from "./utils/FeatureContext";
 import { MetamaskIcon } from './components/icons/chainIcons';
@@ -17,7 +17,6 @@ const Navigation = styled(Nav)`
   text-decoration: none;
   width: 100%;
   border-bottom: 0.2px solid grey;
-  opacity: 0.5;
   &:hover{
     text-decoration:none;
   }
@@ -28,6 +27,7 @@ const Logo = styled(Nav.Item)`
  position: absolute;
  left: 0;
  margin: 1rem;
+ z-index: 1;
 `
 
 const Metamask = styled.div`
@@ -40,10 +40,10 @@ background: linear-gradient(180deg, #F9F8FE 4.17%, #F0EDFF 30.21%, #EEEAFF 56.77
 `
 
 const Limk = styled(Link)`
-color: #4F37FD;
+color: #391EFF;
 margin: 2rem;
 font-size: 1.1rem;
-font-weight: bold;
+font-weight: medium;
   &:hover{
     text-decoration:none;
   }
@@ -52,14 +52,29 @@ font-weight: bold;
   }
 `
 
+const ActiveLimk = styled(Limk)`
+  border-bottom: 3px solid #4F37FD;
+  font-weight: bold;
+`
+
+const MenuButton = styled.button`
+  background: none;
+`
+
 function App() {
 
   const [chain, setChain] =  useState('BSC')
+  const [testNetwork, setNetwork] =  useState(true)
   const [feature, setFeature] =  useState('Select feature')
-  const [privKey, setPrivKey] = useState(null)
-  const [req, setReq] =  useState('code snippet')
+  const [req, setReq] =  useState('')
   const [method, setMethod] = useState('API')
+  const [category, setCategory] = useState('fungible')
 
+  const changeCategory = (category) => {
+    setFeature('Select feature')
+    setReq('');   
+    setCategory(category)
+  }
 
   return (
     <div className="App">
@@ -68,17 +83,20 @@ function App() {
 
      
       <Limk to={'/'}>Home</Limk>
-      <Limk to={'/features'}>Demo</Limk>
+     {category === 'fungible' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('fungible'))}>Fungible token</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('fungible'))}>Fungible token</MenuButton></Limk>} 
+     {category === 'nft' ? <ActiveLimk  to={'/features'}><MenuButton onClick={()=>(changeCategory('nft'))}>NFT</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('nft'))}>NFT</MenuButton></Limk>} 
+     {category === 'multi' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></Limk>} 
+     {category === 'marketplace' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></ActiveLimk> :  <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></Limk>} 
   </Navigation>
  <Metamask> <MetamaskIcon/></Metamask>
 
-  <BlockchainContext.Provider value={{ chain, setChain, privKey, setPrivKey }}>
-  <FeatureContext.Provider value={{ feature, req, setReq, setFeature, method, setMethod }}>
+  <BlockchainContext.Provider value={{ chain, setChain, testNetwork, setNetwork }}>
+  <FeatureContext.Provider value={{ feature, req, setReq, setFeature, method, setMethod, category, setCategory }}>
 <ContentKontejner>
   <Routes>
     <Route path="test" element={<div>Test</div>} />
         <Route path="/" element={<Main />} />
-        <Route path="features" element={<GetNft />} />
+        <Route path="features" element={<Features />} />
 
       </Routes>
       </ContentKontejner>

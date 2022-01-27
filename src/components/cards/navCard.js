@@ -1,14 +1,8 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom'
+import {FeatureContext} from '../../utils/FeatureContext'
 
-const Limk = styled(Link)`
-text-decoration: none;
-&:hover{
 
-text-decoration:none;
-}
-`
 
 const Card = styled.div`
 margin-top: 8%;
@@ -53,8 +47,9 @@ line-height: 140%;
 color: #767481;
 `
 
-const NavCard =({link,title, description, iconColor})=>{ 
+const NavCard =({title, description, iconColor, cat})=>{ 
     const [hover, setHover] = useState(false)
+    const {setCategory} = useContext(FeatureContext)
     const icon = <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="5" y="5" width="12" height="12" stroke="#4F37FD" stroke-width="2"/>
 <rect x="5" y="23" width="12" height="12" stroke="#4F37FD" stroke-width="2"/>
@@ -72,15 +67,17 @@ const hoverIcon = <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xm
 
 
         return (
-           <Limk to={'/getNft'}> <Card
+           <Card
            onMouseEnter={() => setHover(true)}
-           onMouseLeave={() => setHover(false)}>
+           onMouseLeave={() => setHover(false)}
+           onClick={() => setCategory(cat)}
+           >
                         <div>
                                 {hover ? <div>{hoverIcon}</div> : <div>{icon}</div>}
                         </div> 
                         <Title>{title}</Title>
                         <Description>{description}</Description>
-            </Card></Limk>
+            </Card>
         );
 
 }

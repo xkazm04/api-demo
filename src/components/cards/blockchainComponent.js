@@ -45,7 +45,7 @@ const Icon = styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 0.3rem;
+    margin: 0.1rem;
     padding-top: 0.7rem;
     border-radius: 50%;
     &:hover{

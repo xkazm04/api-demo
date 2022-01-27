@@ -15,9 +15,10 @@ const Kontejner = styled.div`
 
 const ListItem = styled(List.Item)`
     font-weight: medium;
-    padding-left: 1rem;
-    padding-top: 2px;
+    padding-left: 2rem;
+    padding-top: 1px;
 `
+
 
 const MyList = styled(List)`
     max-width:  60rem;
@@ -30,7 +31,6 @@ const Title = styled.h3`
 
 
 const ApiResult = ({ result, error }) => {
-
   return (
     <Kontejner>
             <Title>Result</Title>
@@ -38,32 +38,35 @@ const ApiResult = ({ result, error }) => {
   <MyList>
 
       {/*  */}
-        {result.txId ? ( <> <ListItem>Transaction id: </ListItem> <List.Item>{result.txId}</List.Item> </>) : null}
-        {result.transactionHash ? ( <> <ListItem>Transaction hash: </ListItem> <List.Item>{result.transactionHash}</List.Item> </>) : null}
-        {result.transactionIndex ? ( <> <ListItem>Transaction ondex: </ListItem> <List.Item>{result.transactionIndex}</List.Item> </>) : null}
-          {result.contractAddress ? ( <> <ListItem>Contract address: {result.contractAddress}</ListItem> </> ) : null}
-          {result.tokenId ? ( <> <ListItem>Token ID: </ListItem> <List.Item>{result.tokenId}</List.Item> </>) : null}
-          {result.from ? ( <> <ListItem>Address from: </ListItem> <List.Item>{result.from}</List.Item> </>) : null}
-          {result.to ? ( <> <ListItem>Address to: </ListItem> <List.Item>{result.to}</List.Item> </>) : null}
-          {result.value ? ( <> <ListItem>Value: </ListItem> <List.Item>{result.value}</List.Item> </>) : null}
-          {result.tokenPrice ? ( <> <ListItem>Token price: </ListItem> <List.Item>{result.tokenPrice}</List.Item> </>) : null}
-          {result.blockNumber ? ( <> <ListItem>Block number: </ListItem> <List.Item>{result.blockNumber}</List.Item> </>) : null}
-          {result.blockHash ? ( <> <ListItem>Block hash: </ListItem> <List.Item>{result.blockHash}</List.Item> </>) : null}
-          {result.status ? ( <> <ListItem>Status: </ListItem> <List.Item>{result.status}</List.Item> </>) : null}
-          {result.gas ? ( <> <ListItem>Gas: </ListItem> <List.Item>{result.gas}</List.Item> </>) : null}
-          {result.gasPrice ? ( <> <ListItem>Gas price: </ListItem> <List.Item>{result.gasPrice}</List.Item> </>) : null}
-          {result.cumulativeGasUsed ? ( <> <ListItem>Cumulative gas used: </ListItem> <List.Item>{result.cumulativeGasUsed}</List.Item> </>) : null}
-          {result.gasUsed ? ( <> <ListItem>Gas used: </ListItem> <List.Item>{result.gasUsed}</List.Item> </>) : null}
-          {result.provenanceData ? ( <> <ListItem>Provenance data: </ListItem> <List.Item>{result.provenanceData}</List.Item> </>) : null}
-          {result.data ? ( <> <ListItem>Data: </ListItem> <List.Item>{result.data}</List.Item> </>) : null}
-          {result.input ? ( <> <ListItem>Input: </ListItem> <List.Item>{result.input}</List.Item> </>) : null}
-          {result.nonce ? ( <> <ListItem>Nonce: </ListItem> <List.Item>{result.nonce}</List.Item> </>) : null}
+        {result.txId ? ( <> <ListItem> <b>Transaction id: </b>{result.txId}</ListItem> </>) : null}
+        {result.transactionHash ? ( <> <ListItem> <b>Transaction hash: </b>{result.transactionHash}</ListItem> </>) : null}
+        {result.transactionIndex ? ( <> <ListItem> <b>Transaction ondex: </b>{result.transactionIndex}</ListItem> </>) : null}
+          {result.contractAddress ? ( <> <ListItem> <b>Contract address:  </b>{result.contractAddress}</ListItem> </> ) : null}
+          {result.tokenId ? ( <> <ListItem> <b>Token ID: </b>{result.tokenId}</ListItem> </>) : null}
+          {result.from ? ( <> <ListItem> <b>Address from: </b>{result.from}</ListItem> </>) : null}
+          {result.to ? ( <> <ListItem> <b>Address to: </b>{result.to}</ListItem> </>) : null}
+          {result.value ? ( <> <ListItem> <b>Value: </b>{result.value}</ListItem> </>) : null}
+          {result.tokenPrice ? ( <> <ListItem> <b>Token price: </b>{result.tokenPrice}</ListItem> </>) : null}
+          {result.blockNumber ? ( <> <ListItem> <b>Block number: </b>{result.blockNumber}</ListItem> </>) : null}
+          {result.blockHash ? ( <> <ListItem> <b>Block hash: </b>{result.blockHash}</ListItem> </>) : null}
+          {result.status ? ( <> <ListItem> <b>Status: </b>{result.status}</ListItem> </>) : null}
+          {result.gas ? ( <> <ListItem> <b>Gas: </b>{result.gas}</ListItem> </>) : null}
+          {result.gasPrice ? ( <> <ListItem> <b>Gas price: </b>{result.gasPrice}</ListItem> </>) : null}
+          {result.cumulativeGasUsed ? ( <> <ListItem> <b>Cumulative gas used: </b>{result.cumulativeGasUsed}</ListItem> </>) : null}
+          {result.gasUsed ? ( <> <ListItem> <b>Gas used: </b>{result.gasUsed}</ListItem> </>) : null}
+          {result.provenanceData ? ( <> <ListItem> <b>Provenance data: </b>{result.provenanceData}</ListItem> </>) : null}
+          {result.data ? ( <> <ListItem> <b>Data: </b>{result.data}</ListItem> </>) : null}
+          {result.input ? ( <> <ListItem> <b>Input: </b>{result.input}</ListItem> </>) : null}
+          {result.nonce ? ( <> <ListItem> <b>Nonce: </b>{result.nonce}</ListItem> </>) : null}
+          {result.message ? ( <> <ListItem> <b>Error message: </b>{result.message}</ListItem> </>) : null}
+
+          {result.balance ? ( <> <ListItem> <b>Token balance: </b>{result.balance}</ListItem> </>) : null}
            
             </MyList>
 
     </Kontejner>
   );
 };
-// addresses, values, logs --- table
+// addresses, values, logs --- table, provenance - array
 
 export default ApiResult;

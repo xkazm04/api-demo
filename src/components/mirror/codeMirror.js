@@ -6,12 +6,11 @@ import styled from 'styled-components'
 import {FeatureContext} from '../../utils/FeatureContext';
 import { oneDark } from '@codemirror/theme-one-dark';
 import ResultList from './apiResult'
-import { BlockchainContext } from '../../utils/BlockchainContext';
 import IconButton from 'rsuite/IconButton';
 
 const Kontejner = styled.div`
-  width: 60vw;
-  height: 65vh;
+  width: 70vw;
+  height: 50vh;
   padding: 1%;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -24,6 +23,7 @@ const Kontejner = styled.div`
 
 const Title = styled.h3`
     text-align: center;
+    font-size: 1.5rem;
     margin-bottom: 2%;
 `
 const PlayButton = styled(IconButton)`
@@ -35,30 +35,44 @@ const PlayButton = styled(IconButton)`
 `
 
 const Mirror =()=>{ 
-    const {feature, req, setReq} = useContext(FeatureContext);
-    const {chain} = useContext(BlockchainContext)
-    const [result, setResult] = useState('nothing')
+    const {category,feature, req, setReq} = useContext(FeatureContext);
+    const [result, setResult] = useState(null)
     const [error, setError] = useState(null) 
+    const code = req+`
+      .then((response) => {
+      if (response.ok) { const res = response.json() 
+          return res; 
+      } else { throw new Error('Request failed - Please check console for details')}})
+      .then((responseJson) => { console.log(responseJson)
+          return responseJson; })
+      .catch((error) => {
+          return error })  `
     
 
-
-    const play =  () => {
-       const res = Function(req)
-       res()
-       console.log(res)
+    const play =  async () => {
+       let response = await eval(code);
+        if(response){
+          setResult(response)
+          setError(null)
+        } 
+        else{
+          console.log('Other error')
+          setError('Technical error in application logic, contact me')
+        }
     }
 
         return (
             <Kontejner>
-              <Title>  {feature}</Title>
+              <Title>{category}-{feature}</Title>
             <CodeMirror
                     value={req}
-                    height="50vh"
-                    width='59vw'
+                    height="40vh"
+                    width='68vw'
                     theme={oneDark}
                     extensions={[javascript({ jsx: true })]}
                     onChange={(value) => {
                         setReq(value)
+                    
             }}
             />
             <PlayButton icon={TatumIcon} onClick={play} >Run me</PlayButton>

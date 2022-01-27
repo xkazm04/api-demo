@@ -1,9 +1,11 @@
 import {useContext } from "react";
-import { Grid, Row, Col } from "rsuite";
+import { Grid, Row, Col, Toggle } from "rsuite";
 import styled from "styled-components";
 import { BlockchainContext } from "../utils/BlockchainContext";
+import { FeatureContext } from "../utils/FeatureContext";
 import BlockchainComponent from "./cards/blockchainComponent";
-import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon} from './icons/chainIcons'
+import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon, TatumIcon} from './icons/chainIcons'
+import './support.css'
 
 
 const Kontejner = styled.div`
@@ -11,7 +13,6 @@ const Kontejner = styled.div`
   align-items: flex-start;
   margin: 5%;
   width: 25rem;
-  height: 35rem;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
@@ -21,7 +22,7 @@ const Kontejner = styled.div`
 `;
 
 const BlockchainBox = styled.div`
-  margin: 5%;
+  margin: 2%;
 `;
 
 const Title = styled.h3`
@@ -39,24 +40,35 @@ const Flexbox = styled.div`
   margin-top: 2rem;
 `
 
-const Value = styled.div`
+const NetworkFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
-  margin-left: 15%;
+const Value = styled.div`
+  position: absolute;
+  margin-left: 1rem;
   font-weight: bold;
   overflow-wrap: break-word;
   word-wrap: break-word;
   max-width: 20rem;
 `
-
+const MyToggle= styled(Toggle)`
+  margin-left: 7rem;
+`
 
 const Selector = () => {
-
-  const {chain, setChain, privKey, setPrivKey} = useContext(BlockchainContext)
+  const {chain, setChain, testNetwork, setNetwork} = useContext(BlockchainContext)
+  const {setReq, setFeature} = useContext(FeatureContext)
   
-  const setMe = (selectedChain,selectedPrivKey) => {
+  const toggleNetwork = () => {
+    setNetwork(!testNetwork)
+    console.log(testNetwork)
+  }
+  const setMe = (selectedChain) => {
     setChain(selectedChain)
-    setPrivKey(selectedPrivKey)
-    console.log("clicked");
+    setReq('')
+    setFeature('Select feature')
   };
 
   return (
@@ -82,7 +94,7 @@ const Selector = () => {
               <BlockchainComponent
                 icon={<CeloIcon/>}
                 name={"Celo"}
-                onClick={() => setMe("CELO", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
+                onClick={() => setMe("CELO")}
               />
             </Col>
             <Col xs={24} sm={24} md={6}>
@@ -98,7 +110,7 @@ const Selector = () => {
               <BlockchainComponent
                 icon={<HarmonyIcon/>}
                 name={"Harmony"}
-                onClick={() => setMe("ONE", '0d6c13fe5fed644dfa02512d4bffde9453dcb48873afb0b0a4c0cebce160c279')}
+                onClick={() => setMe("ONE")}
               />
             </Col>
           <Col xs={24} sm={24} md={6}>
@@ -125,16 +137,47 @@ const Selector = () => {
               />
             </Col>
           </Row>
+          <Row className="show-grid">
+          <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<TatumIcon/>}
+                name={"KuCoin"}
+                onClick={() => setMe("KCC")}
+              />
+            </Col>
+          <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<TatumIcon/>}
+                name={"Flow"}
+                onClick={() => setMe("FLOW")}
+              />
+              
+            </Col>
+            <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<TatumIcon/>}
+                name={"Moonbeam"}
+                onClick={() => setMe("Moonbeam")}
+              />
+            </Col>
+
+            <Col xs={24} sm={24} md={6}>
+              <BlockchainComponent
+                icon={<TatumIcon/>}
+                name={"XDC"}
+                onClick={() => setMe("XDC")}
+              />
+            </Col>
+          </Row>
         </Grid>
         <Title> Our test data:</Title>
 
 <Flexbox>
-  <div>PrivKey</div>
-  <Value>{privKey}</Value>
+  <div>Chain</div>
+ <NetworkFlex> <Value>{chain}</Value>  <MyToggle size="md" checkedChildren="Mainnet" unCheckedChildren="Testnet" onChange={toggleNetwork}/> </NetworkFlex>
       </Flexbox>
       <Flexbox>
-  <div>Chain</div>
-  <Value>{chain}</Value>
+
     </Flexbox>
 
       </BlockchainBox>

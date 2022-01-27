@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import NavCard from '../components/cards/navCard';
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'rsuite';
@@ -6,7 +7,12 @@ import { Grid, Row, Col } from 'rsuite';
 const Page = styled.div`
     padding-top: 5%;
 `
-
+const Limk = styled(Link)`
+text-decoration: none;
+&:hover{
+text-decoration:none;
+}
+`
 const Kontejner = styled.div`
     display: flex;
     flex-direction: column;
@@ -34,7 +40,7 @@ const TryMe = styled.h3`
 const Gridik = styled(Grid)`
     margin-top: 5%;
 `
-const Blank =()=>{ 
+const MainPage =()=>{ 
 
         return (
             <Page>
@@ -43,13 +49,10 @@ const Blank =()=>{
                     <Gridik fluid>
                     <Row gutter={50} className="show-grid">
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'NFT transactions'} description={'Deploy, mint or burn NFT and track their movement'} iconColor={'#2CCD9A'} link={'/'} />
+                           <Limk to='/features'> <NavCard title={'Token management'} description={'Deploy, mint or burn NFT and track their movement'} iconColor={'#2CCD9A'} cat={'token'} /></Limk>
                             </Col>
                             <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'Multi token transactions'} description={'Use the beauty of Multi token batch features'}  iconColor={'#0EE8F5'} link={'/getNFt'}/>
-                            </Col>
-                            <Col xs={24} sm={12} md={6}>
-                            <NavCard title={'NFT Marketplace'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}/>
+                            <Limk to='/features'>  <NavCard title={'NFT Marketplace'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}  cat={'marketplace'}/></Limk>
                             </Col>
                             <Col xs={24} sm={12} md={6}>
                             <NavCard title={'NFT Auctions'} description={'Create auction '}  iconColor={'#EFFF31'}/>
@@ -63,4 +66,4 @@ const Blank =()=>{
 
 }
 
-export default Blank;
+export default MainPage;
