@@ -30,10 +30,6 @@ const Logo = styled(Nav.Item)`
  z-index: 1;
 `
 
-const Metamask = styled.div`
-position: absolute;
-opacity: 0.03;
-`
 const ContentKontejner = styled.div`
 min-height: 1500px;
 background: linear-gradient(180deg, #F9F8FE 4.17%, #F0EDFF 30.21%, #EEEAFF 56.77%, #FFFFFF 100%);
@@ -88,7 +84,6 @@ function App() {
      {category === 'multi' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></Limk>} 
      {category === 'marketplace' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></ActiveLimk> :  <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></Limk>} 
   </Navigation>
- <Metamask> <MetamaskIcon/></Metamask>
 
   <BlockchainContext.Provider value={{ chain, setChain, testNetwork, setNetwork }}>
   <FeatureContext.Provider value={{ feature, req, setReq, setFeature, method, setMethod, category, setCategory }}>

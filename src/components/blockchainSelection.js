@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { BlockchainContext } from "../utils/BlockchainContext";
 import { FeatureContext } from "../utils/FeatureContext";
 import BlockchainComponent from "./cards/blockchainComponent";
-import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon, TatumIcon} from './icons/chainIcons'
+import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon, TatumIcon, KccIcon, MoonIcon, FlowIcon} from './icons/chainIcons'
 import './support.css'
 
 
@@ -77,102 +77,66 @@ const Selector = () => {
         <Grid fluid>
           <Row className="show-grid">
           <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<AlgoIcon/>}
-                name={"Alogorand"}
-                onClick={() => setMe("ALGO")}
-              />
+           {chain === 'ALGO' ?  <BlockchainComponent active={'#f1f1wf1'} icon={<AlgoIcon/>} name={"Alogorand"} onClick={() => setMe("ALGO")}/>:
+            <BlockchainComponent  icon={<AlgoIcon/>} name={"Alogorand"} onClick={() => setMe("ALGO")}/>}  
+           </Col>
+            <Col xs={24} sm={24} md={6}>
+            {chain === 'BSC' ? <BlockchainComponent  active={'#e8b30b'}  icon={<BscIcon/>} name={"Bsc"} onClick={() => setMe("BSC")} />:
+            <BlockchainComponent icon={<BscIcon/>} name={"Bsc"} onClick={() => setMe("BSC")} />}  
             </Col>
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<BscIcon/>}
-                name={"Bsc"}
-                onClick={() => setMe("BSC")}
-              />
+            {chain === 'CELO' ? <BlockchainComponent active={'#33c97b'} icon={<CeloIcon/>} name={"Celo"} onClick={() => setMe("CELO")} />:
+            <BlockchainComponent icon={<CeloIcon/>} name={"Celo"} onClick={() => setMe("CELO")} />}  
+              
             </Col>
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<CeloIcon/>}
-                name={"Celo"}
-                onClick={() => setMe("CELO")}
-              />
-            </Col>
-            <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<EthIcon/>}
-                name={"Eth"}
-                onClick={() => setMe("ETH")}
-              />
+            {chain === 'ETH' ? <BlockchainComponent  active={'#bbc6ef'} icon={<EthIcon/>} name={"Eth"} onClick={() => setMe("ETH")} />:
+           <BlockchainComponent icon={<EthIcon/>} name={"Ethereum"} onClick={() => setMe("ETH")} />}  
+             
             </Col>
           </Row>
           <Row className="show-grid">
           <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<HarmonyIcon/>}
-                name={"Harmony"}
-                onClick={() => setMe("ONE")}
-              />
+          {chain === 'ONE' ?<BlockchainComponent active={'#6beac1'} icon={<HarmonyIcon/>} name={"Harmony"} onClick={() => setMe("ONE")} />:
+           <BlockchainComponent icon={<HarmonyIcon/>} name={"Harmony"} onClick={() => setMe("ONE")} />}  
             </Col>
           <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<PolygonIcon/>}
-                name={"Polygon"}
-                onClick={() => setMe("POLYGON")}
-              />
-              
+          {chain === 'POLYGON' ? <BlockchainComponent active={'#b78de9'} icon={<PolygonIcon/>} name={"Polygon"} onClick={() => setMe("POLYGON")}/>:
+            <BlockchainComponent icon={<PolygonIcon/>} name={"Polygon"} onClick={() => setMe("POLYGON")}/>}          
             </Col>
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<SolanaIcon/>}
-                name={"Solana"}
-                onClick={() => setMe("SOL")}
-              />
+              {chain === 'SOL' ?  <BlockchainComponent active={'#44b0bb'} icon={<SolanaIcon/>} name={"Solana"} onClick={() => setMe("SOL")} />:
+             <BlockchainComponent icon={<SolanaIcon/>} name={"Solana"} onClick={() => setMe("SOL")} />}          
             </Col>
 
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<TronIcon/>}
-                name={"Tron"}
-                onClick={() => setMe("TRON")}
-              />
+            {chain === 'TRON' ? <BlockchainComponent active={'#de0e15'} icon={<TronIcon/>} name={"Tron"} onClick={() => setMe("TRON")}/>:
+              <BlockchainComponent icon={<TronIcon/>} name={"Tron"} onClick={() => setMe("TRON")}/>}
             </Col>
           </Row>
           <Row className="show-grid">
           <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<TatumIcon/>}
-                name={"KuCoin"}
-                onClick={() => setMe("KCC")}
-              />
+          {chain === 'KCC' ?<BlockchainComponent active={'#f1f1wf1'} icon={<TatumIcon/>} name={"KuCoin"} onClick={() => setMe("KCC")} />:
+              <BlockchainComponent icon={<KccIcon/>} name={"KuCoin"} onClick={() => setMe("KCC")} />}
             </Col>
           <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<TatumIcon/>}
-                name={"Flow"}
-                onClick={() => setMe("FLOW")}
-              />
-              
+          {chain === 'FLOW' ?<BlockchainComponent active={'#f1f1wf1'} icon={<TatumIcon/>} name={"Flow"} onClick={() => setMe("FLOW")} />:
+              <BlockchainComponent icon={<FlowIcon/>} name={"Flow"} onClick={() => setMe("FLOW")} />}
             </Col>
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<TatumIcon/>}
-                name={"Moonbeam"}
-                onClick={() => setMe("Moonbeam")}
-              />
+            {chain === 'GLMR' ?<BlockchainComponent active={'#f1f1wf1'} icon={<TatumIcon/>} name={"Moonbeam"} onClick={() => setMe("GLMR")} />:
+              <BlockchainComponent icon={<MoonIcon/>} name={"Moonbeam"} onClick={() => setMe("GLMR")} />}
             </Col>
 
             <Col xs={24} sm={24} md={6}>
-              <BlockchainComponent
-                icon={<TatumIcon/>}
-                name={"XDC"}
-                onClick={() => setMe("XDC")}
-              />
+            {chain === 'XDC' ? <BlockchainComponent active={'#f1f1wf1'} icon={<TatumIcon/>} name={"XDC"} onClick={() => setMe("XDC")} />:
+              <BlockchainComponent icon={<TatumIcon/>} name={"XDC"} onClick={() => setMe("XDC")} />}
             </Col>
           </Row>
         </Grid>
-        <Title> Our test data:</Title>
+        <Title>Selected environment:</Title>
 
-<Flexbox>
+  <Flexbox>
   <div>Chain</div>
  <NetworkFlex> <Value>{chain}</Value>  <MyToggle size="md" checkedChildren="Mainnet" unCheckedChildren="Testnet" onChange={toggleNetwork}/> </NetworkFlex>
       </Flexbox>

@@ -44,8 +44,8 @@ if (featId === 'getNFTByAddress') return (
 const requestOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
-    // Adjust path parameters to your needs /:chain /:accountAddress /:tokenAddress
-fetch('https://api-eu1.tatum.io/v3/nft/transaction/ONE/one1l7egc0r6rvvnszm7ned8h032lud20f00sdz499/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203?pageSize=10&offset=0', requestOptions)
+// Adjust path parameters to your needs /:chain /:accountAddress /:tokenAddress
+fetch('https://api-eu1.tatum.io/v3/nft/transaction/ONE/one1l7egc0r6rvvnszm7ned8h032lud20f00sdz499/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203?pageSize=10', requestOptions)
 `
 )
 

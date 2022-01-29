@@ -1,7 +1,9 @@
-let TestKey = process.env.REACT_APP_TESTNET_API_KEY
-let ProdKey = process.env.REACT_APP_MAINNET_API_KEY
+let TestKey = localStorage.getItem('testPlaygroundKey')
+let ProdKey = localStorage.getItem('mainPlaygroundKey')
 
  const ExamplesBscNFT = (featId, network) => {
+    let TestKey = localStorage.getItem('testPlaygroundKey')
+    let ProdKey = localStorage.getItem('mainPlaygroundKey')
     
 
 if (featId === 'deployNFT') return ( 
@@ -43,8 +45,8 @@ if (featId === 'getNFTByAddress') return (
 const requestOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
-// Adjust path parameters to your needs
-fetch('https://api-eu1.tatum.io/v3/nft/transaction/BSC/{address}/{tokenAddress}?pageSize=10&offset=0&from=1087623&to=1087823', requestOptions)
+// Adjust path parameters to your needs /:chain /:accountAddress /:tokenAddress
+fetch('https://api-eu1.tatum.io/v3/nft/transaction/BSC/0xffb28c3c7a1b19380b7e9e5A7Bbe2afF1AA7A5Ef/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c?pageSize=10', requestOptions)
 `
 )
 

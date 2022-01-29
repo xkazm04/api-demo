@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Button } from 'rsuite';
 
 const Kontejner = styled.div`
     display: flex;
@@ -9,6 +8,7 @@ const Kontejner = styled.div`
     justify-content: center;
     text-align: center;
     align-items: center;
+    
 `
 
 const Title = styled.div`
@@ -16,31 +16,12 @@ const Title = styled.div`
     text-align: center;
     margin: 5%;
     font-size: 1rem;
+    padding: 0.3rem;
+    border-radius: 15px;
     font-weight: bold;
+    background: ${props => props.active || 'transparent'};
+    width: 100%;
 `
-
-const ActionButton = styled(Button)`
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  box-sizing: border-box;
-  box-shadow: 0px 4px 7px -2px rgba(16, 24, 40, 0.03),
-    0px 6px 15px -4px #F3FFF8;
-    background: transparent;
-    width: 5rem;
-
-    &:hover{
-    background: transparent;
-    box-sizing: border-box;
-    box-shadow: 4px 10px 7px -2px rgba(16, 24, 40, 0.03),
-        2px 18px 25px -8px #F3FFF8;
-    }
-    &:focus{
-        background: transparent;
-    }
-    &:active{
-        background: transparent;
-    }
-`
-
 const Icon = styled.div`
     justify-content: center;
     text-align: center;
@@ -57,16 +38,16 @@ const Icon = styled.div`
 
 
 
-const BlockchainComponent =({icon, name, onClick})=>{ 
+const BlockchainComponent =({icon, name, onClick, active})=>{ 
 
 
 
         return (
             <Kontejner>
             
-                <Title>{name}</Title>
+                <Title  active={active}>{name}</Title>
                 <Icon onClick={onClick}>{icon}</Icon>
-                <ActionButton  onClick={onClick}></ActionButton>
+
             </Kontejner>
         );
 

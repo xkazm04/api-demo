@@ -33,8 +33,8 @@ const FeatureBsc = () => {
 <MyDropdown title={feature} size="md">
                     <Dropdown.Item onClick={()=>(changeFeature('Deploy NFT',ExamplesBscNFT('deployNFT',testNetwork)))}>Deploy NFT smart contract</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Deploy NFT',ExamplesBscNFT('mintNFT',testNetwork)))}>Mint NFT</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by address',ExamplesBscNFT('getNFTByAddress',testNetwork)))}>Get NFT transactions by address</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by token',ExamplesBscNFT('getNFTByToken',testNetwork)))}>Get NFT transactions by token</Dropdown.Item>
+                    {/* <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by address',ExamplesBscNFT('getNFTByAddress',testNetwork)))}>Get NFT transactions by address</Dropdown.Item> not supported feature
+                    <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by token',ExamplesBscNFT('getNFTByToken',testNetwork)))}>Get NFT transactions by token</Dropdown.Item> not supported feature */}
                     <Dropdown.Item onClick={()=>(changeFeature('Get transactions',ExamplesBscNFT('getNFTTransaction',testNetwork)))}>Get NFT Transactions</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get NFT provenance', ExamplesBscNFT('getNFTProvenance',testNetwork)))}>Get NFT Token Provenance</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get NFT metadata', ExamplesBscNFT('getNFTMetadata',testNetwork)))}>Get NFT Token Metadata</Dropdown.Item>
