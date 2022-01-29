@@ -2,16 +2,12 @@ export const TatumIcon = () => {
   return <svg width="64" height="40" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_d_2876_36979)">
   <rect x="14" y="2" width="100" height="100" />
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M75.97 49.0947H59.77V76.8795H75.97V49.0947Z" fill="#1A1A1A"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M98.3265 27H68.5571V40.8924H98.3265V27Z" fill="#2CCD9A"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M59.7693 34.3105H30V48.2029H59.7693V34.3105Z" fill="#1A1A1A"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M75.97 49.0947H59.77V76.8795H75.97V49.0947Z" fill="#8B7DF4"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M98.3265 27H68.5571V40.8924H98.3265V27Z" fill="#8B7DF4"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M59.7693 34.3105H30V48.2029H59.7693V34.3105Z" fill="#8B7DF4"/>
   </g>
   <defs>
   <filter id="filter0_d_2876_36979" x="0" y="0" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-  <feOffset dy="12"/>
-  <feGaussianBlur stdDeviation="7"/>
-  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.22 0"/>
   <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2876_36979"/>
   <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2876_36979" result="shape"/>
   </filter>

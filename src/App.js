@@ -8,9 +8,11 @@ import { useState } from 'react';
 import styled from 'styled-components'
 import Main from './pages/main'
 import Features from './pages/features'
+import Storage from './pages/storage'
+
+
 import { BlockchainContext } from "./utils/BlockchainContext";
 import { FeatureContext } from "./utils/FeatureContext";
-import { MetamaskIcon } from './components/icons/chainIcons';
 
 const Navigation = styled(Nav)`
   padding-top: 3%;
@@ -64,7 +66,7 @@ function App() {
   const [feature, setFeature] =  useState('Select feature')
   const [req, setReq] =  useState('')
   const [method, setMethod] = useState('API')
-  const [category, setCategory] = useState('fungible')
+  const [category, setCategory] = useState('home')
 
   const changeCategory = (category) => {
     setFeature('Select feature')
@@ -77,12 +79,12 @@ function App() {
          <Logo>{TatumLogo}</Logo>
   <Navigation>
 
-     
-      <Limk to={'/'}>Home</Limk>
+  {category === 'home' ? <ActiveLimk to={'/'}><MenuButton onClick={()=>(changeCategory('home'))}>Home</MenuButton></ActiveLimk> :  <Limk to={'/'}><MenuButton onClick={()=>(changeCategory('home'))}>Home</MenuButton></Limk>} 
      {category === 'fungible' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('fungible'))}>Fungible token</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('fungible'))}>Fungible token</MenuButton></Limk>} 
      {category === 'nft' ? <ActiveLimk  to={'/features'}><MenuButton onClick={()=>(changeCategory('nft'))}>NFT</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('nft'))}>NFT</MenuButton></Limk>} 
      {category === 'multi' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></ActiveLimk> : <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('multi'))}>Multi token</MenuButton></Limk>} 
      {category === 'marketplace' ? <ActiveLimk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></ActiveLimk> :  <Limk to={'/features'}><MenuButton onClick={()=>(changeCategory('marketplace'))}>Marketplace</MenuButton></Limk>} 
+     {category === 'storage' ? <ActiveLimk to={'/storage'}><MenuButton onClick={()=>(changeCategory('storage'))}>IPFS</MenuButton></ActiveLimk> :  <Limk to={'/storage'}><MenuButton onClick={()=>(changeCategory('storage'))}>IPFS</MenuButton></Limk>} 
   </Navigation>
 
   <BlockchainContext.Provider value={{ chain, setChain, testNetwork, setNetwork }}>
@@ -92,6 +94,7 @@ function App() {
     <Route path="test" element={<div>Test</div>} />
         <Route path="/" element={<Main />} />
         <Route path="features" element={<Features />} />
+        <Route path="storage" element={<Storage />} />
 
       </Routes>
       </ContentKontejner>
