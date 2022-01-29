@@ -111,7 +111,7 @@ const UploadFile =()=>{
                 {loading ? <Loading>..<Loader/>..</Loading> : null}
             {error ? <>Error occured, check console</> : null}
                 <PhotoBox>
-                    {photo ? <Frame><img src={photo}  width="auto" height="200"></img></Frame> : null}
+                    {photo ? <Frame><img src={photo} alt='alt' width="auto" height="200"></img></Frame> : null}
                     </PhotoBox> 
             </BoxUpload>
             </>

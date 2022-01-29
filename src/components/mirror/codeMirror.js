@@ -50,6 +50,7 @@ const Mirror =()=>{
     
 
     const play =  async () => {
+      // eslint-disable-next-line
        let response = await eval(code);
         if(response){
           setResult(response)

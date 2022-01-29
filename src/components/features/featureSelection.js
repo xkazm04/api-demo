@@ -1,6 +1,6 @@
 import React,{useContext, Suspense} from 'react';
 import styled from 'styled-components'
-import {ButtonGroup, Button, Loader } from 'rsuite';
+import { Loader } from 'rsuite';
 import {FeatureContext} from '../../utils/FeatureContext';
 import { BlockchainContext } from '../../utils/BlockchainContext';
 
@@ -30,9 +30,6 @@ const Kontejner = styled.div`
   border-radius: 16px;
 `
 
-const BtnGroup = styled(ButtonGroup)`
-    margin-top: 0.5rem;
-`
 
 const Title = styled.h3`
     text-align: center;
@@ -41,12 +38,12 @@ const Title = styled.h3`
 
 const FeatureSelector =()=>{ 
 
-    const {feature, method, setMethod} = useContext(FeatureContext);
+    const {method} = useContext(FeatureContext);
     const {chain} = useContext(BlockchainContext)
 
-    const changeMethod = (newMethod) => {
-        setMethod(newMethod)
-    }
+    // const changeMethod = (newMethod) => {
+    //     setMethod(newMethod)
+    // }
         return (
             <Kontejner>
                 <Title>Select feature</Title>
