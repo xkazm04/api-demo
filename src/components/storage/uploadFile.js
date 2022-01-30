@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import styled from 'styled-components';
 import {List, Loader} from 'rsuite'
+import { BulbIcon } from '../icons/regularIcons';
 
 
 const Title = styled.h3`
@@ -50,6 +51,8 @@ const DetailBox = styled.div`
     margin-top: 3%;
     margin-bottom: 3%;
     width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 13px rgba(0, 0, 0, 0.03);
+border-radius: 8px;
 `
 
 const ListItem = styled(List.Item)`
@@ -62,7 +65,7 @@ const ListItem = styled(List.Item)`
 const HashBox = styled.div`
     color: #187600;
     margin-top: 5%;
-    font-size: 15px;
+    font-size: 0.8rem;
     text-align: left;
 `
 
@@ -72,6 +75,14 @@ const Label = styled.label`
 
 const Loading = styled.div`
     margin-top: 5%;
+`
+
+const Hint = styled.div`
+    text-align: left;
+    position: relative;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 20%;
 `
 
 
@@ -147,6 +158,8 @@ const UploadFile =()=>{
             {uploadResult ? <HashBox>IPFS file uploaded with <b>Hash: {uploadResult.ipfsHash}</b></HashBox> : null}
             {loading ? <Loading>..<Loader/>..</Loading> : null}
             {error ? <>Error occured, check console</> : null}
+
+            {uploadResult ? <Hint><BulbIcon/>Hint: Pass hash into format ipfs://Hash and put this URI as NFT mint property</Hint>: null}
             </BoxUpload>
 
             </>

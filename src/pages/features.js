@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 import BlockchainSelector from '../components/blockchainSelection';
 import FeatureSelector from '../components/features/featureSelection';
 import CodeMirror from '../components/mirror/codeMirror';
@@ -13,8 +13,13 @@ const MirrorBox = styled.div`
 `
 
 
-const GetNft =()=>{ 
-
+const Features =()=>{ 
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+}, []);
         return (
             <Kontejner>
             <div>
@@ -31,4 +36,4 @@ const GetNft =()=>{
 
 }
 
-export default GetNft;
+export default Features;

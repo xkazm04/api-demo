@@ -42,7 +42,8 @@ const Mirror =()=>{
       .then((response) => {
       if (response.ok) { const res = response.json() 
           return res; 
-      } else { throw new Error('Request failed - Please check console for details')}})
+      } else { 
+        throw new Error('Request failed - Please check console for details')}})
       .then((responseJson) => { console.log(responseJson)
           return responseJson; })
       .catch((error) => {

@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { BlockchainContext } from "../utils/BlockchainContext";
 import { FeatureContext } from "../utils/FeatureContext";
 import BlockchainComponent from "./cards/blockchainComponent";
-import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon, TatumIcon, KccIcon, MoonIcon, FlowIcon} from './icons/chainIcons'
-import {CeloAIcon, BscAIcon, PolygonAIcon, SolanaAIcon, HarmonyAIcon, TronAIcon, AlgoAIcon, EthAIcon,TatumAIcon, KccAIcon, MoonAIcon, FlowAIcon} from './icons/chainActiveIcons'
+import {CeloIcon, BscIcon, PolygonIcon, SolanaIcon, HarmonyIcon, TronIcon, AlgoIcon, EthIcon, KccIcon , FlowIcon} from './icons/chainIcons'
+import {CeloAIcon, BscAIcon, PolygonAIcon, SolanaAIcon, HarmonyAIcon, TronAIcon, AlgoAIcon, EthAIcon, KccAIcon, FlowAIcon} from './icons/chainActiveIcons'
 import './support.css'
 
 
@@ -28,8 +28,8 @@ const BlockchainBox = styled.div`
 
 const Title = styled.h3`
     text-align: center;
-    margin-bottom: 2%;
-    font-size: 1.5rem;
+    margin-top: 5%;
+    font-size: 1rem;
 `
 
 const Flexbox = styled.div`
@@ -38,7 +38,7 @@ const Flexbox = styled.div`
   height: 2rem;
   max-width: 4rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `
 
 const NetworkFlex = styled.div`
@@ -75,6 +75,7 @@ const Selector = () => {
   return (
     <Kontejner>
       <BlockchainBox>
+      <Title>Select blockchain:</Title>
         <Grid fluid>
           <Row className="show-grid">
           <Col xs={24} sm={24} md={6}>
@@ -117,14 +118,14 @@ const Selector = () => {
           </Row>
           <Row className="show-grid">
           <Col xs={24} sm={24} md={6}>
-          {chain === 'KCC' ?<BlockchainComponent active={'#91cac1'} icon={<KccAIcon/>} name={"KuCoin"} onClick={() => setMe("KCC")} />:
-              <BlockchainComponent icon={<KccIcon/>} name={"KuCoin"} onClick={() => setMe("KCC")} />}
+          {chain === 'KCS' ?<BlockchainComponent active={'#91cac1'} icon={<KccAIcon/>} name={"KuCoin"} onClick={() => setMe("KCS")} />:
+              <BlockchainComponent icon={<KccIcon/>} name={"KuCoin"} onClick={() => setMe("KCS")} />}
             </Col>
           <Col xs={24} sm={24} md={6}>
           {chain === 'FLOW' ?<BlockchainComponent active={'#00e887'} icon={<FlowAIcon/>} name={"Flow"} onClick={() => setMe("FLOW")} />:
               <BlockchainComponent icon={<FlowIcon/>} name={"Flow"} onClick={() => setMe("FLOW")} />}
             </Col>
-            <Col xs={24} sm={24} md={6}>
+            {/* <Col xs={24} sm={24} md={6}>
             {chain === 'GLMR' ?<BlockchainComponent active={'#e67dad'} icon={<MoonAIcon/>} name={"Moonbeam"} onClick={() => setMe("GLMR")} />:
               <BlockchainComponent icon={<MoonIcon/>} name={"Moonbeam"} onClick={() => setMe("GLMR")} />}
             </Col>
@@ -132,7 +133,7 @@ const Selector = () => {
             <Col xs={24} sm={24} md={6}>
             {chain === 'XDC' ? <BlockchainComponent active={'#f1f1wf1'} icon={<TatumAIcon/>} name={"XDC"} onClick={() => setMe("XDC")} />:
               <BlockchainComponent icon={<TatumIcon/>} name={"XDC"} onClick={() => setMe("XDC")} />}
-            </Col>
+            </Col> */}
           </Row>
         </Grid>
         <Title>Selected environment:</Title>

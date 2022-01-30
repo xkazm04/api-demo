@@ -49,7 +49,7 @@ const ApiResult = ({ result, error }) => {
       {/*  */}
         {result.txId ? ( <> <ListItem> <b>Transaction id: </b>{result.txId}</ListItem> </>) : null}
         {result.transactionHash ? ( <> <ListItem> <b>Transaction hash: </b>{result.transactionHash}</ListItem> </>) : null}
-        {result.transactionIndex ? ( <> <ListItem> <b>Transaction ondex: </b>{result.transactionIndex}</ListItem> </>) : null}
+        {result.transactionIndex ? ( <> <ListItem> <b>Transaction index: </b>{result.transactionIndex}</ListItem> </>) : null}
           {result.contractAddress ? ( <> <ListItem> <b>Contract address:  </b>{result.contractAddress}</ListItem> </> ) : null}
           {result.tokenId ? ( <> <ListItem> <b>Token ID: </b>{result.tokenId}</ListItem> </>) : null}
           {result.from ? ( <> <ListItem> <b>Address from: </b>{result.from}</ListItem> </>) : null}
@@ -72,8 +72,10 @@ const ApiResult = ({ result, error }) => {
           {result.balance ? ( <> <ListItem> <b>Token balance: </b>{result.balance}</ListItem> </>) : null}
           {/* Tables */}
           {result.metadata ? (<TableBox>Tokens<Table columns={tokensForAddressColumns} data={result.logs}> </Table> </TableBox>) : null}
-          {result.logs ? (<TableBox>Logs<Table columns={logsColumns} data={result.logs}> </Table> </TableBox>) : null}
-          {result.logs ? (<TableBox><Table scroll={{ x: 'max-content' }}  columns={logsTopicsColumns} data={result.logs}> </Table> </TableBox>) : null}
+          {result && result.length > 0 ? (<TableBox> <Table  columns={transactionColumns} data={result}> </Table> </TableBox>) : null}
+          {result && result.length > 0 ? (<TableBox> <Table  columns={provenanceColumns} data={result}> </Table> </TableBox>) : null}
+          {result && result.length > 0 ? (<TableBox> <Table  columns={royaltyColumns} data={result}> </Table> </TableBox>) : null}
+          {result.logs ? (<TableBox>Logs<Table scroll={{ x: 'max-content' }}   columns={logsColumns} data={result.logs}> </Table> </TableBox>) : null}
             </MyList>
 
     </Kontejner>
@@ -95,21 +97,13 @@ const logsColumns = [
     width: 50,
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-    width: 200,
-  },
-];
-
-const logsTopicsColumns = [
-  {
     title: 'Topics',
     dataIndex: 'topics',
     key: 'topics',
     width: 500,
-  }
+  },
 ];
+
 
 const tokensForAddressColumns = [
   {
@@ -131,6 +125,58 @@ const tokensForAddressColumns = [
     width: 200,
   },
 ];
+
+const transactionColumns = [
+  {
+    title: 'Block number',
+    dataIndex: 'blockNumber',
+    key: 'blockNumber',
+    width: 100,
+  },
+  {
+    title: 'Token ID',
+    dataIndex: 'tokenId',
+    key: 'tokenId',
+    width: 200,
+  },
+  {
+    title: 'Transaction ID',
+    dataIndex: 'txId',
+    key: 'txId',
+    width: 300,
+  },
+];
+
+const provenanceColumns = [
+  {
+    title: 'Provenance data',
+    dataIndex: 'provenanceData',
+    key: 'provenanceData',
+    width: 300,
+  },
+  {
+    title: 'Token Price',
+    dataIndex: 'tokenPrice',
+    key: 'tokenPrice',
+    width: 100,
+  }
+];
+
+const royaltyColumns = [
+  {
+    title: 'Addresses',
+    dataIndex: 'addresses',
+    key: 'addresses',
+    width: 200,
+  },
+  {
+    title: 'Values',
+    dataIndex: 'values',
+    key: 'values',
+    width: 50,
+  }
+];
+
 
 
 

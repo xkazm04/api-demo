@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom'
 import NavCard from '../components/cards/navCard';
+import HintComponent from '../components/hintComponent';
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'rsuite';
 
@@ -86,7 +87,7 @@ const MainPage =()=>{
             <Page>
                 <Kontejner>
                 <TryMe>Initialize your test data</TryMe>
-                <p><i>Optional - You can pass or change your API key in code editor before any test</i> </p>
+                <p><i>You can pass or change your API key in code editor before any test. Data is stored in your browser, for improved security run this app locally.</i> </p>
                 <DataFlex>
                     
             <InputBox><label for='inputOne'>Testnet API Key</label>    <Input type='text' placeholder='Testnet API Key' id='inputOne' value={testKey} onChange={handleTestChange}/></InputBox>
@@ -95,14 +96,22 @@ const MainPage =()=>{
                     <TryMe>Select playground section</TryMe>
                     <Gridik fluid>
                     <Row gutter={35} className="show-grid">
-                              <Col xs={24} sm={12} md={8}>
-                            <Limk to='/features'>  <NavCard title={'Fungible token management'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}  cat={'marketplace'}/></Limk>
+                              <Col xs={24} sm={12} md={8} lg={8}>
+                            <Limk to='/features'>  <NavCard title={'Token management'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}  cat={'fungible'}/></Limk>
                             </Col>
-                            <Col xs={24} sm={12} md={8}>
+                            <Col xs={24} sm={12} md={8} lg={8}>
                            <Limk to='/features'> <NavCard title={'NFT management'} description={'Deploy, mint or burn NFT and track their movement'} iconColor={'#2CCD9A'} cat={'nft'} /></Limk>
                             </Col>
-                            <Col xs={24} sm={12} md={8}>
-                            <Limk to='/features'>  <NavCard title={'NFT Marketplace'} description={'Build your own NFT marketplace'}  iconColor={'#CD1010'}  cat={'marketplace'}/></Limk>
+                            <Col xs={24} sm={12} md={8} lg={8}>
+                            <Limk to='/features'>  <NavCard title={'NFT Marketplace'} description={'Build your own NFT marketplace'}  iconColor={'#ff0'}  cat={'marketplace'}/></Limk>
+                            </Col>
+    </Row>
+    <Row gutter={35} className="show-grid">
+                              <Col xs={24} sm={12} md={8} lg={8}>
+                            <Limk to='/storage'>  <NavCard title={'IPFS'} description={'Store NFT image to IPFS for free, retrieve IPFS ID and display your stored image.'}  iconColor={'#8ed2ed'}  cat={'storage'}/></Limk>
+                            </Col>
+                            <Col xs={24} sm={12} md={16}>
+                                <HintComponent/>
                             </Col>
     </Row>
                         

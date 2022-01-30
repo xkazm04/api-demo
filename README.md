@@ -12,14 +12,14 @@ In comparison with Postman provides novice-friendly GUI and set of prefilled tem
 - Token management (Mint, Burn, Transfer Fungible tokens (Erc20, Bep20, etc..))
 - NFT management (Mint, Burn, Transfer and Get details about NFTs)
 - IPFS services (Store image to IPFS for free, Display IPFS image)
-- Marketplace & Auctions (Services to build your own NFT marketplace with auction mechanisms) - in construction
+- Marketplace & Auctions (Services to build your own NFT marketplace with auction mechanisms) - TBD 2/2022
 
 ## Supported chains
-- Algorand
-- Binance Smart Chain, Celo, Ethereum, Harmony (ONE), Polygon, Kucoin
-- ....
+- Algorand (Deploy token only)
+- Full featured EVM compatible chains: Binance Smart Chain, Celo, Ethereum, Harmony (ONE), Polygon, Kucoin
+- Solana (Mint NFT only)
+- Flow (Mint NFT only)
 
-TBD
 
 ## Dependencies
 1. Node version 16.x.x+ (if installed locally)
@@ -30,7 +30,13 @@ Available at https://wonderful-mclean-65bab6.netlify.app
 ### Run application locally
 
 1. Clone repository
-2. `npm install` - install all dependencies
-3. `npm start` - start your local environment on http://localhost:3000
+2. `npm install`/`yarn` - install all dependencies
+3. `npm start`/`yarn start` - start your local environment on http://localhost:3000
+
+## Roadmap (2/2022)
+* [ ] Add supported chains by Tatum: Tron, Moonbeam
+* [ ] Add marketplace/auction features to playground
+* [ ] Add wallet authentication for supported chains
+
 
 
