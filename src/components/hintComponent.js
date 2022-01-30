@@ -29,8 +29,8 @@ const HintComponent =()=>{
             <Kontejner>
              <i>Pssst! Heard you might want to help with creating your first NFT </i>
              <Ul>
-                 <p>1. Create free <a href='https://dashboard.tatum.io' target="_blank">Tatum account</a></p>
-                 <p>2. Generate <a href='https://www.youtube.com/watch?v=h4l7Q3u3SEI' target="_blank">Tatum mainnet API key</a> </p>
+                 <p>1. Create free <a href='https://dashboard.tatum.io' target="noopener">Tatum account</a></p>
+                 <p>2. Generate <a href='https://www.youtube.com/watch?v=h4l7Q3u3SEI' target="noopener">Tatum mainnet API key</a> </p>
                  <p>3. Store image to <Link to='/storage'>IPFS</Link> </p>
                  <p>4. Deploy NFT smart contract <Link to='/features'>no code</Link> and mint</p>
              </Ul>
