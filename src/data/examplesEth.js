@@ -61,8 +61,8 @@ if (featId === 'getNFTByToken') return (
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}',
 // If testnet API key applied, choose testnet type - ethereum-ropsten(default)/ethereum-rinkeby
                 'x-testnet-type': 'ethereum-ropsten' },
-    // Adjust path parameters to your needs
-    fetch('https://api-eu1.tatum.io/v3/nft/transaction/tokenId/ETH/{tokenAddress}/{tokenId}?pageSize=10&offset=0&from=1087623&to=1087823', requestOptions)
+// Adjust path parameters to your needs /:chain /:tokenAddress /:tokenId
+    fetch('https://api-eu1.tatum.io/v3/nft/transaction/tokenId/ETH/0x789c00ed7ddd72a806dbac40df926df32fde3c2f/5?pageSize=10&offset=0', requestOptions)
     `)
 
 if (featId === 'getNFTTransaction') return ( 
@@ -87,7 +87,7 @@ if (featId === 'getNFTProvenance') return (
 // If testnet API key applied, choose testnet type - ethereum-ropsten(default)/ethereum-rinkeby
                 'x-testnet-type': 'ethereum-ropsten' },
     // Adjust path parameters to your needs /:chain /:contractAddress /:tokenId
-    fetch('https://api-eu1.tatum.io/v3/nft/provenance/ETH/0x2C64Ba36A418a7291ecD3410Ae4e2258cE36AF72/1', requestOptions)
+    fetch('https://api-eu1.tatum.io/v3/nft/provenance/ETH/0x789c00ed7ddd72a806dbac40df926df32fde3c2f/1', requestOptions)
     `
     )
 
@@ -100,7 +100,7 @@ const requestOptions = {
 // If testnet API key applied, choose testnet type - ethereum-ropsten(default)/ethereum-rinkeby
                 'x-testnet-type': 'ethereum-ropsten' },
 // Adjust path parameters to your needs /:chain /:contractAddress /:tokenId
-fetch('https://api-eu1.tatum.io/v3/nft/metadata/ETH/0x2C64Ba36A418a7291ecD3410Ae4e2258cE36AF72/1', requestOptions)
+fetch('https://api-eu1.tatum.io/v3/nft/metadata/ETH/0x789c00ed7ddd72a806dbac40df926df32fde3c2f/1', requestOptions)
 `
 )
 
@@ -113,7 +113,7 @@ if (featId === 'getNFTRoyalty') return (
 // If testnet API key applied, choose testnet type - ethereum-ropsten(default)/ethereum-rinkeby
                 'x-testnet-type': 'ethereum-ropsten' },
     // Adjust path parameters to your needs /:chain /:contractAddress /:tokenId
-    fetch('https://api-eu1.tatum.io/v3/nft/royalty/ETH/0x2C64Ba36A418a7291ecD3410Ae4e2258cE36AF72/1', requestOptions)
+    fetch('https://api-eu1.tatum.io/v3/nft/royalty/ETH/0x789c00ed7ddd72a806dbac40df926df32fde3c2f/1', requestOptions)
     `
 )
 

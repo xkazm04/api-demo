@@ -18,8 +18,7 @@ const MyDropdown = styled(Dropdown)`
 
 `
 
-
-const FeaturePolygon = () => {
+const FeatureOne = () => {
     const {feature, setFeature, setReq, category} = useContext(FeatureContext);
     const {testNetwork} = useContext(BlockchainContext)
     const changeFeature = (feature, req)=>{
@@ -32,7 +31,9 @@ const FeaturePolygon = () => {
 {category === 'nft' ? 
 <MyDropdown title={feature} size="md">
                     <Dropdown.Item onClick={()=>(changeFeature('Deploy NFT',ExamplesPolygonNFT('deployNFT',testNetwork)))}>Deploy NFT smart contract</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>(changeFeature('Deploy NFT',ExamplesPolygonNFT('mintNFT',testNetwork)))}>Mint NFT</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Mint NFT',ExamplesPolygonNFT('mintNFT',testNetwork)))}>Mint NFT</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Mint NFT express',ExamplesPolygonNFT('mintNFTexpress',testNetwork)))}>Mint NFT Express</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Get contract from tx',ExamplesPolygonNFT('getContract', testNetwork)))}>Get contract address from transaction</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by address',ExamplesPolygonNFT('getNFTByAddress',testNetwork)))}>Get NFT transactions by address</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get NFT transcations by token',ExamplesPolygonNFT('getNFTByToken',testNetwork)))}>Get NFT transactions by token</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get transactions',ExamplesPolygonNFT('getNFTTransaction',testNetwork)))}>Get NFT Transactions</Dropdown.Item>
@@ -45,15 +46,23 @@ const FeaturePolygon = () => {
                     <Dropdown.Item onClick={()=>(changeFeature('Deploy token',ExamplesPolygonFungible('deployFungible',testNetwork)))}>Deploy fungible token</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Mint token',ExamplesPolygonFungible('mintFungible', testNetwork)))}>Mint fungible token</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Burn token',ExamplesPolygonFungible('burnFungible', testNetwork)))}>Burn fungible token</Dropdown.Item>
-                    {/* <Dropdown.Item onClick={()=>(changeFeature('Get account transactions',ExamplesPolygonFungible('getTransactions', testNetwork)))}>Get account transactions</Dropdown.Item> not supported feature */}
+                    <Dropdown.Item onClick={()=>(changeFeature('Get contract from tx',ExamplesPolygonFungible('getContract', testNetwork)))}>Get contract address from transaction</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Get account transactions',ExamplesPolygonFungible('getTransactions', testNetwork)))}>Get account transactions</Dropdown.Item>
                     <Dropdown.Item onClick={()=>(changeFeature('Get account balance',ExamplesPolygonFungible('getBalance', testNetwork)))}>Get account balance</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Approve spending', ExamplesPolygonFungible('approveSpending',testNetwork)))}>Approve spending</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Transfer fungible token', ExamplesPolygonFungible('transferFungible',testNetwork)))}>Transfer fungible token</Dropdown.Item>
                 </MyDropdown> : null }
 {category === 'marketplace' ? 
 <MyDropdown title={feature} size="md">
                     <Dropdown.Item onClick={()=>(changeFeature('Deploy NFT Marketplace',ExamplesPolygonMarket('deployMarket',testNetwork)))}>Deploy NFT marketplace</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Sell asset',ExamplesPolygonMarket('marketSell',testNetwork)))}>Sell asset on markeplace</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Buy asset',ExamplesPolygonMarket('marketBuy',testNetwork)))}>Buy asset on marketplace</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Cancel listing',ExamplesPolygonMarket('cancelListing',testNetwork)))}>Cancel listing</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Get listings',ExamplesPolygonMarket('getListings',testNetwork)))}>Get listings</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>(changeFeature('Get listing detail',ExamplesPolygonMarket('getListingById',testNetwork)))}>Get listing detail by id</Dropdown.Item>
                 </MyDropdown> : null }
     </Kontejner>
   );
 };
 
-export default FeaturePolygon;
+export default FeatureOne;

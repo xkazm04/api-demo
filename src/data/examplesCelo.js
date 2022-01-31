@@ -81,7 +81,7 @@ const requestOptions = {
 // Tatum will automatically switch you to tetnet/mainnet based on your filled API key
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
 // Adjust path parameters to your needs /:chain /:accountAddress /:tokenAddress
-fetch('https://api-eu1.tatum.io/v3/nft/transaction/CELO/0xffb28c3c7a1b19380b7e9e5A7Bbe2afF1AA7A5Ef/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203?pageSize=10', requestOptions)
+fetch('https://api-eu1.tatum.io/v3/nft/transaction/CELO/0xffb28c3c7a1b19380b7e9e5A7Bbe2afF1AA7A5Ef/0x6709bdda623af7eb152cb2fe2562ab7e031e564f?pageSize=10', requestOptions)
 `
 )
 
@@ -93,7 +93,7 @@ const requestOptions = {
 // Tatum will automatically switch you to tetnet/mainnet based on your filled API key
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
 // Adjust path parameters to your needs /:chain /:tokenAddress /:tokenId
-fetch('https://api-eu1.tatum.io/v3/nft/transaction/tokenId/CELO/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203/1?pageSize=10', requestOptions)
+fetch('https://api-eu1.tatum.io/v3/nft/transaction/tokenId/CELO/0x6709bdda623af7eb152cb2fe2562ab7e031e564f/1?pageSize=10', requestOptions)
     `)
 
 if (featId === 'getNFTTransaction') return ( 
@@ -116,7 +116,7 @@ const requestOptions = {
 // Tatum will automatically switch you to tetnet/mainnet based on your filled API key
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
 // Adjust path parameters to your needs /:chain /:contractAddress /:tokenId
-fetch('https://api-eu1.tatum.io/v3/nft/provenance/CELO/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203/1', requestOptions)
+fetch('https://api-eu1.tatum.io/v3/nft/provenance/CELO/0x6709bdda623af7eb152cb2fe2562ab7e031e564f/1', requestOptions)
     `
     )
 
@@ -128,7 +128,7 @@ const requestOptions = {
 // Tatum will automatically switch you to tetnet/mainnet based on your filled API key
     headers: { 'Content-Type': 'application/json', 'x-api-key': '${network === true ? TestKey : ProdKey}' }}
 // Adjust path parameters to your needs /:chain /:contractAddress /:tokenId
-fetch('https://api-eu1.tatum.io/v3/nft/metadata/CELO/0x21346EbE2503aB51aA02D6eb8364c0f0C05B9203/1', requestOptions)
+fetch('https://api-eu1.tatum.io/v3/nft/metadata/CELO/0x6709bdda623af7eb152cb2fe2562ab7e031e564f/1', requestOptions)
 `
 )
 

@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 const Kontejner = styled.div`
-        display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
