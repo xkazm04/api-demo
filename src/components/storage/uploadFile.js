@@ -85,6 +85,9 @@ const Hint = styled.div`
     margin-top: 20%;
 `
 
+const RequiredKey = styled.div`
+    color: #a70000;
+`
 
 const UploadFile =()=>{ 
     const [selectedFile, setSelectedFile] = useState();
@@ -92,21 +95,21 @@ const UploadFile =()=>{
     const [uploadResult, setUploadResult] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-
+    let TestKey = localStorage.getItem('testPlaygroundKey')
     const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
 		setIsFilePicked(true);
 	};
 
 	const handleSubmission = () => {
-		const formData = new FormData();
+		const formData = new FormData();  
 
 		formData.append('file', selectedFile);
         setLoading(true)
 		fetch(
 			'https://api-eu1.tatum.io/v3/ipfs',
 			{
-                headers:{'x-api-key': '0e5b8956-110d-4406-9c07-c24135e7389c_100'},
+                headers:{'x-api-key': `${TestKey}`},
 				method: 'POST',
 				body: formData
                 
@@ -129,6 +132,8 @@ const UploadFile =()=>{
             <>
             <BoxUpload>
 <Title>Upload to IPFS</Title>
+{TestKey === undefined ? <RequiredKey><i>Testnet API key required</i></RequiredKey> : null}
+{TestKey === '' ? <RequiredKey><i>Testnet API key required</i></RequiredKey> : null}
 
 
 <Label>

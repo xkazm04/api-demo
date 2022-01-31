@@ -87,11 +87,11 @@ const MainPage =()=>{
             <Page>
                 <Kontejner>
                 <TryMe>Initialize your test data</TryMe>
-                <p><i>You can pass or change your API key in code editor before any test. Data is stored in your browser, for improved security run this app locally.</i> </p>
+                <p><i>Data is stored in your browser, for improved security run this app locally.</i> </p>
                 <DataFlex>
                     
-            <InputBox><label for='inputOne'>Testnet API Key</label>    <Input type='text' placeholder='Testnet API Key' id='inputOne' value={testKey} onChange={handleTestChange}/></InputBox>
-            <InputBox><label for='inputTwo'>Mainnet API Key</label>   <Input type='text' placeholder='Mainnet API Key'  id='inputTwo' value={mainKey} onChange={handleMainChange}/></InputBox>
+            <InputBox><label for='inputOne'>Testnet API Key</label>    <Input type='text' placeholder='Mandatory for IPFS services' id='inputOne' value={testKey} onChange={handleTestChange}/></InputBox>
+            <InputBox><label for='inputTwo'>Mainnet API Key</label>   <Input type='text' placeholder='Fill nnly if you want to play with mainnet'  id='inputTwo' value={mainKey} onChange={handleMainChange}/></InputBox>
             </DataFlex>
                     <TryMe>Select playground section</TryMe>
                     <Gridik fluid>

@@ -62,6 +62,10 @@ border: solid 0.5px #e8e8e8;
 border-radius: 8px;
 ` 
 
+const RequiredKey = styled.div`
+    color: #a70000;
+`
+
 
 
 const UploadFile =()=>{ 
@@ -75,12 +79,14 @@ const UploadFile =()=>{
 		setFormInput(event.target.value);
 	};
 
+    let TestKey = localStorage.getItem('testPlaygroundKey')
+
 	const handleGet = () => {
         setLoading(true)
 		fetch(
 			`https://api-eu1.tatum.io/v3/ipfs/${formInput}`,
 			{
-                headers:{'x-api-key': '0e5b8956-110d-4406-9c07-c24135e7389c_100'},
+                headers:{'x-api-key': `${TestKey}`},
 				method: 'GET'
 			}
 		)
@@ -104,11 +110,11 @@ const UploadFile =()=>{
 
             <BoxUpload>
             <Title>Get IPFS image</Title>
-            <Input type="input"
-                value={formInput} placeholder="insert ipfs hash"
-                onChange={changeHandler}></Input>
+                    {TestKey === undefined ? <RequiredKey><i>Testnet API key required</i></RequiredKey> : null}
+                    {TestKey === '' ? <RequiredKey><i>Testnet API key required</i></RequiredKey> : null}
+            <Input type="input" value={formInput} placeholder="insert ipfs hash" onChange={changeHandler}></Input>
                 <Button onClick={handleGet}>Get Image</Button>
-                {loading ? <Loading>..<Loader/>..</Loading> : null}
+            {loading ? <Loading>..<Loader/>..</Loading> : null}
             {error ? <>Error occured, check console</> : null}
                 <PhotoBox>
                     {photo ? <Frame><img src={photo} alt='alt' width="auto" height="200"></img></Frame> : null}
